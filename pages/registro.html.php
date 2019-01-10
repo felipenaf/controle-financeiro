@@ -7,7 +7,7 @@
 			<div class="container" style="background-color: lightgray;">
 				<div class="col-md-5">
 					<div class="p-2"></div>
-					<form action="registro.src.php" method="GET">
+					<form action="" method="POST">
 						<div class="form-group">
 							<label for="descricao">Descrição</label>
 							<input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="ex. Almoço, chocolate, etc...">

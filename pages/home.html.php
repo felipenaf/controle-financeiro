@@ -3,7 +3,15 @@
 	<?php include_once ROOT_PATH . "/pages/templates/head.html.php"?>
 	<body>
 		<?php include_once ROOT_PATH . "/pages/templates/header.html.php"?>
-		<main>
+		<main class="container">
+
+			<form action="" method="POST">
+
+				<input type="text" name="texto">
+
+				<input type="submit" value="teste" name="botao">
+
+			</form>
 
 		</main>
 

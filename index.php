@@ -5,13 +5,18 @@ mb_internal_encoding("utf-8");
 
 defined('ROOT_PATH') || define('ROOT_PATH', realpath(''));
 
-$page = isset($_GET['page']) ? $_GET['page'] : '';
-if (!$page) {
-	include "pages/home.html.php";
-} elseif (file_exists("pages/$page.html.php")) {
-	include "pages/$page.html.php";
+$page = isset($_GET['page']) ? $_GET['page'] : 'home';
+
+$page = array_filter(explode("/", $page));
+
+$file = $page[0] . ".src.php";
+
+var_dump($file_src);
+
+if (file_exists("pages/$file")) {
+	include "pages/$file";
 } else {
-	include "pages/notFound.html.php";
+	include "pages/notFound.src.php";
 }
 
 ?>
