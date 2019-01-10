@@ -1,10 +1,22 @@
 <?php
 
-var_dump($_POST);
-include ROOT_PATH . "/model/Connection.class.php";
+if ($_POST) {
+	try {
+		include ROOT_PATH . "/model/Connection.class.php";
+		$c = new Connection();
+		$con = $c->getConnection();
 
-$con = new Connection();
-$con->getConnection();
-var_dump($con);
+		var_dump($_POST);
+		$data = !empty($_POST['data']) ? $_POST['data'] : date('Y-m-d');
 
-include "registro.html.php";
+		$con->query("INSERT INTO controle_financeiro.produto (nome, valor, grupo, tipo, data_criacao) VALUES ('teste', 50, 'aml', 0, '$data');");
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	} finally {
+		$c->closeAll();
+	}
+	include "registro.html.php";
+
+} else {
+	include "registro.html.php";
+}

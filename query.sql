@@ -9,7 +9,7 @@ CREATE TABLE controle_financeiro.produto (
 	grupo varchar(255),
 	tipo TINYINT,
 	observacao text,
-	data_criacao timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+	data_criacao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	data_modificacao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id_produto)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
