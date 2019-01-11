@@ -1,9 +1,9 @@
 <?php
 
-class Produto {
+class ProdutoModel {
 
 	private $id;
-	private $nome;
+	private $descricao;
 	private $valor;
 	private $grupo;
 	private $tipo;
@@ -30,19 +30,19 @@ class Produto {
 	}
 
 	/**
-	 * Get the value of nome
+	 * Get the value of descricao
 	 */
-	public function getNome() {
-		return $this->nome;
+	public function getDescricao() {
+		return $this->descricao;
 	}
 
 	/**
-	 * Set the value of nome
+	 * Set the value of descricao
 	 *
 	 * @return  self
 	 */
-	public function setNome($nome) {
-		$this->nome = $nome;
+	public function setDescricao($descricao) {
+		$this->descricao = $descricao;
 
 		return $this;
 	}

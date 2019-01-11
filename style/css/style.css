@@ -4,5 +4,33 @@
 }
 
 body{
-    background-color: rgb(127, 145, 139);
+    background-color: rgb(182, 230, 214);
+}
+
+header{
+    background-color: rgb(136, 70, 44);
+}
+
+footer{
+    background-color: rgb(46, 48, 148);
+}
+
+.container{
+    margin: 1px auto;
+    width: 900px;
+}
+
+.space-10{
+    padding: 10px;
+}
+
+.form-group{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
+.form-control{
+    display: block;
+    margin-top: 1px;
+    padding: 3px;
 }

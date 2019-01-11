@@ -1,3 +1,3 @@
-<header>
-	<div class="container" style="background-color: lightblue;">MENU</div>
+<header class="container">
+	<div>MENU</div>
 </header>

@@ -1,3 +1,3 @@
-<footer>
-	<div class="container bg-info" style="background-color:;">FOOTER</div>
+<footer class="container">
+	<div>FOOTER</div>
 </footer>

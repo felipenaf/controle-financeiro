@@ -4,7 +4,7 @@ USE controle_financeiro;
 
 CREATE TABLE controle_financeiro.produto (
 	id_produto int(11) NOT NULL AUTO_INCREMENT,
-	nome varchar(255) NOT NULL,
+	descricao varchar(255) NOT NULL,
 	valor double(8,2) NOT NULL,
 	grupo varchar(255),
 	tipo TINYINT,
