@@ -14,26 +14,27 @@ class ProdutoConsulta {
 			$con = $c->getConnection();
 
 			$itens["descricao"] = $produto->getDescricao();
-			$itens["data"] = $produto->getDataCriacao();
+			$itens["data_criacao"] = $produto->getDataCriacao();
 			$itens["grupo"] = $produto->getGrupo();
 			$itens["valor"] = $produto->getValor();
 			$itens["observacao"] = $produto->getObservacao();
 			$itens["tipo"] = $produto->getTipo();
 
-			$query = 'INSERT INTO controle_financeiro.produto (descricao, data_criacao, grupo, valor, observacao, tipo)
-						VALUES (:descricao, :data_criacao, :grupo, :valor, :observacao, :tipo);';
+			var_dump($itens);
 
-			$teste = $con->prepare($query);
-			// https://phpdelusions.net/pdo_examples/insert
-			// Exception has occurred.
-			// PDOException: SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
-			$teste->execute($itens);
+			$query = 'INSERT INTO controle_financeiro.produto 
+						(descricao, data_criacao, grupo, valor, observacao, tipo)
+					VALUES 
+						(:descricao, :data_criacao, :grupo, :valor, :observacao, :tipo);';
+
+			$con = $con->prepare($query);
+			$con->execute($itens);
 
 		} catch (Exception $e) {
 			echo $e->getMessage();
+		}finally{
+			$c->closeAll();
 		}
-
-		// var_dump($produto);
 
 	}
 

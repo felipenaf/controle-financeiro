@@ -11,18 +11,18 @@
 
 						<div class="form-group">
 							<label for="descricao">Descrição</label>
-							<input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="ex. Almoço, chocolate, etc...">
+							<input type="text" class="form-control" id="descricao" name="descricao" aria-describedby="descricao" placeholder="ex. Almoço, chocolate, etc..." required>
 						</div>
 
 						<div class="form-group">
-							<label for="data">Data</label>
-							<input type="date" class="form-control" id="data" name="data" aria-describedby="data">
+							<label for="data_criacao">Data</label>
+							<input type="date" class="form-control" id="data_criacao" name="data_criacao" aria-describedby="data_criacao" required>
 						</div>
 
 						<div class="form-group">
 							<label for="grupo">Grupo</label>
 							<select class="form-control" id="grupo" name="grupo">
-								<option selected>Escolha...</option>
+								<option value="outros">Outros</option>
 								<option value="uninove">Uninove</option>
 								<option value="aml">Aml</option>
 							</select>
@@ -30,7 +30,7 @@
 
 						<div class="form-group">
 							<label for="valor">Valor</label>
-							<input type="number" class="form-control" id="valor" name="valor" aria-describedby="valor" step=0.01>
+							<input type="number" class="form-control" id="valor" name="valor" aria-describedby="valor" step=0.01 required>
 						</div>
 
 						<div class="form-group">
@@ -41,9 +41,8 @@
 						<div class="form-group">
 							<label for="tipo">Tipo</label>
 							<select class="form-control" id="tipo" name="tipo">
-								<option selected>Escolha...</option>
-								<option value="1">Entrada</option>
 								<option value="0">Saída</option>
+								<option value="1">Entrada</option>
 							</select>
 						</div>
 

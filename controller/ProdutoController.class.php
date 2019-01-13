@@ -13,7 +13,7 @@ class ProdutoController {
 
 		$p = new ProdutoModel();
 		$p->setDescricao(!empty($produto['descricao']) ? $produto['descricao'] : NULL);
-		$p->setDataCriacao($produto['data']);
+		$p->setDataCriacao($produto['data_criacao']);
 		$p->setGrupo($produto['grupo']);
 		$p->setValor($produto['valor']);
 		$p->setObservacao($produto['observacao']);
