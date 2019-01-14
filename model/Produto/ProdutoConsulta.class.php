@@ -1,6 +1,6 @@
 <?php
 
-require $_SERVER['DOCUMENT_ROOT'] . "/model/db/Connection.class.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/model/db/Connection.class.php";
 require $_SERVER['DOCUMENT_ROOT'] . "/model/Produto/ProdutoModel.class.php";
 
 class ProdutoConsulta {
@@ -10,6 +10,7 @@ class ProdutoConsulta {
 
 	public function insertProduto($produto) {
 		try {
+
 			$c = new Connection();
 			$con = $c->getConnection();
 
@@ -22,17 +23,19 @@ class ProdutoConsulta {
 
 			var_dump($itens);
 
-			$query = 'INSERT INTO controle_financeiro.produto 
+			$query = 'INSERT INTO controle_financeiro.produto
 						(descricao, data_criacao, grupo, valor, observacao, tipo)
-					VALUES 
+					VALUES
 						(:descricao, :data_criacao, :grupo, :valor, :observacao, :tipo);';
 
 			$con = $con->prepare($query);
 			$con->execute($itens);
 
+			include $_SERVER['DOCUMENT_ROOT'] . "/pages/sucesso.src.php";
+
 		} catch (Exception $e) {
 			echo $e->getMessage();
-		}finally{
+		} finally {
 			$c->closeAll();
 		}
 
@@ -46,7 +49,15 @@ class ProdutoConsulta {
 
 	}
 
-	public function listProduto() {
+	public function getProdutos() {
+		$c = new Connection();
+		$con = $c->getConnection();
+
+		$query = "SELECT * FROM controle_financeiro.produto;";
+
+		$result = $con->query($query);
+
+		return $result->fetchAll(PDO::FETCH_ASSOC);
 
 	}
 

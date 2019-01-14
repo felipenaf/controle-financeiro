@@ -6,4 +6,4 @@ if ($_POST) {
 
 }
 
-include_once ROOT_PATH . "/pages/home.html.php";
+include_once ROOT_PATH . "/pages/$page[0].html.php";

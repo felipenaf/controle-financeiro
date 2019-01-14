@@ -11,8 +11,6 @@ $page = array_filter(explode("/", $page));
 
 $file = $page[0] . ".src.php";
 
-var_dump($file);
-
 if (file_exists("pages/$file")) {
 	include "pages/$file";
 } else {

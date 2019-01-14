@@ -5,10 +5,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/model/Produto/ProdutoModel.class.php"
 
 class ProdutoController {
 
-	public function __construct() {
-
-	}
-
 	public static function insertProduto($produto) {
 
 		$p = new ProdutoModel();
@@ -21,6 +17,11 @@ class ProdutoController {
 
 		$consulta = new ProdutoConsulta();
 		return $consulta->insertProduto($p);
+	}
+
+	public static function getProdutos() {
+		$consulta = new ProdutoConsulta();
+		return $consulta->getProdutos();
 	}
 
 }

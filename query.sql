@@ -17,5 +17,6 @@ CREATE TABLE controle_financeiro.produto (
 CREATE TABLE controle_financeiro.grupo (
 	id_grupo int(11) NOT NULL AUTO_INCREMENT,
 	nome varchar(255),
+	tipo TINYINT NOT NULL,
 	PRIMARY KEY (id_grupo)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

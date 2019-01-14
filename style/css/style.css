@@ -3,21 +3,36 @@
     padding: 0;
 }
 
+.borda{
+    border: 1px solid black;
+}
+
+.center{
+    text-align: center;
+}
+
 body{
-    background-color: rgb(182, 230, 214);
+    background-color: rgb(208, 231, 224);
 }
 
 header{
-    background-color: rgb(136, 70, 44);
+    background-color: rgb(136, 91, 73);
+    text-align: center;
 }
 
 footer{
-    background-color: rgb(46, 48, 148);
+    background-color: rgb(92, 93, 145);
+    text-align: center;
 }
 
 .container{
     margin: 1px auto;
-    width: 900px;
+    width: 70%;
+}
+
+.container-fluid{
+    margin: 1px auto;
+    width: 90%;
 }
 
 .space-10{
@@ -33,4 +48,22 @@ footer{
     display: block;
     margin-top: 1px;
     padding: 3px;
+}
+
+.dashboard-table{
+    width: 100%;
+}
+
+.dashboard-table .grupo{
+    font-weight: 700;
+}
+
+.dashboard-table td{
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.dashboard-receita{
+    font-size: 2rem;
+    color: rgb(68, 131, 32);
 }

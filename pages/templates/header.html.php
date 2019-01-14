@@ -1,3 +1,3 @@
-<header class="container">
-	<div>MENU</div>
+<header class="container-fluid">
+	<div class="container borda">MENU</div>
 </header>
