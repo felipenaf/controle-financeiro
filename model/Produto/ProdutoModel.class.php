@@ -2,29 +2,46 @@
 
 class ProdutoModel {
 
-	private $id;
+	private $id_produto;
+	private $id_grupo;
 	private $descricao;
 	private $valor;
-	private $grupo;
-	private $tipo;
 	private $observacao;
-	private $dataCriacao;
-	private $dataModificacao;
+	private $data_criacao;
+	private $data_modificacao;
 
 	/**
-	 * Get the value of id
+	 * Get the value of id_produto
 	 */
-	public function getId() {
-		return $this->id;
+	public function getIdProduto() {
+		return $this->id_produto;
 	}
 
 	/**
-	 * Set the value of id
+	 * Set the value of id_produto
 	 *
 	 * @return  self
 	 */
-	public function setId($id) {
-		$this->id = $id;
+	public function setIdProduto($id_produto) {
+		$this->id_produto = $id_produto;
+
+		return $this;
+	}
+
+	/**
+	 * Get the value of id_grupo
+	 */
+	public function getIdGrupo() {
+		return $this->id_grupo;
+	}
+
+	/**
+	 * Set the value of id_grupo
+	 *
+	 * @return  self
+	 */
+	public function setIdGrupo($id_grupo) {
+		$this->id_grupo = $id_grupo;
 
 		return $this;
 	}
@@ -66,42 +83,6 @@ class ProdutoModel {
 	}
 
 	/**
-	 * Get the value of grupo
-	 */
-	public function getGrupo() {
-		return $this->grupo;
-	}
-
-	/**
-	 * Set the value of grupo
-	 *
-	 * @return  self
-	 */
-	public function setGrupo($grupo) {
-		$this->grupo = $grupo;
-
-		return $this;
-	}
-
-	/**
-	 * Get the value of tipo
-	 */
-	public function getTipo() {
-		return $this->tipo;
-	}
-
-	/**
-	 * Set the value of tipo
-	 *
-	 * @return  self
-	 */
-	public function setTipo($tipo) {
-		$this->tipo = $tipo;
-
-		return $this;
-	}
-
-	/**
 	 * Get the value of observacao
 	 */
 	public function getObservacao() {
@@ -120,37 +101,37 @@ class ProdutoModel {
 	}
 
 	/**
-	 * Get the value of dataCriacao
+	 * Get the value of data_criacao
 	 */
 	public function getDataCriacao() {
-		return $this->dataCriacao;
+		return $this->data_criacao;
 	}
 
 	/**
-	 * Set the value of dataCriacao
+	 * Set the value of data_criacao
 	 *
 	 * @return  self
 	 */
-	public function setDataCriacao($dataCriacao) {
-		$this->dataCriacao = $dataCriacao;
+	public function setDataCriacao($data_criacao) {
+		$this->data_criacao = $data_criacao;
 
 		return $this;
 	}
 
 	/**
-	 * Get the value of dataModificacao
+	 * Get the value of data_modificacao
 	 */
 	public function getDataModificacao() {
-		return $this->dataModificacao;
+		return $this->data_modificacao;
 	}
 
 	/**
-	 * Set the value of dataModificacao
+	 * Set the value of data_modificacao
 	 *
 	 * @return  self
 	 */
-	public function setDataModificacao($dataModificacao) {
-		$this->dataModificacao = $dataModificacao;
+	public function setDataModificacao($data_modificacao) {
+		$this->data_modificacao = $data_modificacao;
 
 		return $this;
 	}

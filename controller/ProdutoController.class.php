@@ -10,10 +10,9 @@ class ProdutoController {
 		$p = new ProdutoModel();
 		$p->setDescricao(!empty($produto['descricao']) ? $produto['descricao'] : NULL);
 		$p->setDataCriacao($produto['data_criacao']);
-		$p->setGrupo($produto['grupo']);
+		$p->setIdGrupo($produto['id_grupo']);
 		$p->setValor($produto['valor']);
 		$p->setObservacao($produto['observacao']);
-		$p->setTipo($produto['tipo']);
 
 		$consulta = new ProdutoConsulta();
 		return $consulta->insertProduto($p);

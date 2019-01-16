@@ -16,17 +16,16 @@ class ProdutoConsulta {
 
 			$itens["descricao"] = $produto->getDescricao();
 			$itens["data_criacao"] = $produto->getDataCriacao();
-			$itens["grupo"] = $produto->getGrupo();
+			$itens["id_grupo"] = $produto->getIdGrupo();
 			$itens["valor"] = $produto->getValor();
 			$itens["observacao"] = $produto->getObservacao();
-			$itens["tipo"] = $produto->getTipo();
 
 			var_dump($itens);
 
 			$query = 'INSERT INTO controle_financeiro.produto
-						(descricao, data_criacao, grupo, valor, observacao, tipo)
+						(descricao, data_criacao, id_grupo, valor, observacao)
 					VALUES
-						(:descricao, :data_criacao, :grupo, :valor, :observacao, :tipo);';
+						(:descricao, :data_criacao, :id_grupo, :valor, :observacao);';
 
 			$con = $con->prepare($query);
 			$con->execute($itens);

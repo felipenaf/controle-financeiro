@@ -21,10 +21,10 @@
 
 						<div class="form-group">
 							<label for="grupo">Grupo</label>
-							<select class="form-control" id="grupo" name="grupo">
-								<option value="outros">Outros</option>
-								<option value="uninove">Uninove</option>
-								<option value="aml">Aml</option>
+							<select class="form-control" id="id_grupo" name="id_grupo">
+						<?php foreach ($grupos as $grupo): ?>
+								<option name="id_grupo" value="coco"><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
+						<?php endforeach;?>
 							</select>
 						</div>
 
@@ -36,14 +36,6 @@
 						<div class="form-group">
 							<label for="observacao">Observação</label>
 							<textarea type="text" class="form-control" id="observacao" name="observacao" aria-describedby="observacao"></textarea>
-						</div>
-
-						<div class="form-group">
-							<label for="tipo">Tipo</label>
-							<select class="form-control" id="tipo" name="tipo">
-								<option value="0">Saída</option>
-								<option value="1">Entrada</option>
-							</select>
 						</div>
 
 						<div class="form-group">

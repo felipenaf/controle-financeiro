@@ -3,16 +3,18 @@
 	<?php include_once ROOT_PATH . "/pages/templates/head.html.php"?>
 	<body>
 		<?php include_once ROOT_PATH . "/pages/templates/header.html.php"?>
-		<main class="container">
+		<main class="container-fluid">
+			<div class="container">
 
-			<form action="" method="POST">
+				<form action="" method="POST">
 
-				<input type="text" name="texto">
+					<input type="text" name="texto">
 
-				<input type="submit" value="teste" name="botao">
+					<input type="submit" value="botao" name="botao">
 
-			</form>
+				</form>
 
+			</div>
 		</main>
 
 		<?php include_once ROOT_PATH . "/pages/templates/footer.html.php"?>

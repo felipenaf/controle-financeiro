@@ -25,7 +25,7 @@ class GrupoConsulta {
 		$c = new Connection();
 		$con = $c->getConnection();
 
-		$query = "SELECT * FROM controle_financeiro.grupo;";
+		$query = "SELECT * FROM controle_financeiro.grupo ORDER BY nome;";
 
 		$result = $con->query($query);
 
