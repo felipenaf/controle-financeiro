@@ -16,14 +16,14 @@
 
 						<div class="form-group">
 							<label for="data_criacao">Data</label>
-							<input type="date" class="form-control" id="data_criacao" name="data_criacao" aria-describedby="data_criacao" required>
+							<input type="date" class="form-control" id="data_criacao" name="data_criacao" value="<?=date('Y-m-d')?>" aria-describedby="data_criacao" required>
 						</div>
 
 						<div class="form-group">
 							<label for="grupo">Grupo</label>
 							<select class="form-control" id="id_grupo" name="id_grupo">
 						<?php foreach ($grupos as $grupo): ?>
-								<option name="id_grupo" value="coco"><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
+								<option name="id_grupo" value="<?=$grupo['id_grupo']?>"><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
 						<?php endforeach;?>
 							</select>
 						</div>

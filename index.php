@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', false);
 
 ini_set("default_charset", "utf-8");
 mb_internal_encoding("utf-8");

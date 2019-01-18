@@ -33,4 +33,17 @@ class GrupoConsulta {
 
 	}
 
+	public function getGrupoById($id_grupo) {
+
+		$c = new Connection();
+		$con = $c->getConnection();
+
+		$query = "SELECT * FROM controle_financeiro.grupo WHERE id_grupo = $id_grupo;";
+
+		$result = $con->query($query);
+
+		return $result->fetch(PDO::FETCH_ASSOC);
+
+	}
+
 }

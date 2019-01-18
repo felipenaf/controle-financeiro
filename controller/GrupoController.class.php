@@ -10,4 +10,9 @@ class GrupoController {
 		return $consulta->getGrupos();
 	}
 
+	public static function getGrupoById($id_grupo) {
+		$consulta = new GrupoConsulta();
+		return $consulta->getGrupoById($id_grupo);
+	}
+
 }

@@ -3,7 +3,7 @@
 	<?php include_once ROOT_PATH . "/pages/templates/head.html.php"?>
 	<body>
 		<?php include_once ROOT_PATH . "/pages/templates/header.html.php"?>
-		<main class="container-fluid">
+		<main class="container">
 
 			<div class="space-10"></div>
 			<div class="container center dashboard-receita">RECEITA</div>
