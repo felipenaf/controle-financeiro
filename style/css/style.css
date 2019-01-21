@@ -41,6 +41,7 @@ header{
     text-decoration: none;
     color: black;
     font-size: 1.2rem;
+    color: aquamarine;
 }
 
 /* -------------------------------------------------------- */
@@ -56,6 +57,7 @@ header{
 footer{
     background-color: rgb(92, 93, 145);
     text-align: center;
+    color: aquamarine;
 }
 
 footer .footer{
@@ -99,17 +101,37 @@ footer .footer{
 
 .produto-layout td{
     padding: 50px;
-    text-align: center;
+}
+
+.produto-layout li{
+    padding: 20px;
 }
 
 
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
-/* -------------------------------------------------------- */
 
-/* -------- */
+/* ----------------- */
+/* PRODUTO HISTÓRICO */
+/* ----------------- */
+
+.produto-historico{
+    width: 100%;
+}
+
+.produto-historico td{
+    padding: 10px;
+    /* border: 1px solid black; */
+}
+
+.produto-historico-title{
+    background-color: rgb(92, 93, 145);
+    color: aquamarine;
+}
+
+
+
+/* ---------------- */
 /* PRODUTO CADASTRO */
-/* -------- */
+/* ---------------- */
 
 .form-group{
     margin-bottom: 1rem;
@@ -121,6 +143,10 @@ footer .footer{
     margin-top: 1px;
     padding: 3px;
 }
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
 
 /* --------- */
 /* DASHBOARD */

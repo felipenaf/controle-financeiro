@@ -6,7 +6,7 @@
 		<main class="container">
 
 			<p>Dados salvos com sucesso.</p>
-			<a href="<?=$_GET['page']?>">Voltar</a>
+			<a href="/">Voltar</a>
 
 		</main>
 

@@ -21,6 +21,14 @@
 				</li>
 
 				<li>
+					<a href="/grupo-cadastro">Grupo</a>
+				</li>
+
+				<li>
+					|
+				</li>
+
+				<li>
 					<a href="/dashboard">Dashboard</a>
 				</li>
 

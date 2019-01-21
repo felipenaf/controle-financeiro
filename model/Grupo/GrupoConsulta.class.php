@@ -5,10 +5,33 @@ require $_SERVER['DOCUMENT_ROOT'] . "/model/Grupo/GrupoModel.class.php";
 
 class GrupoConsulta {
 
-	public function __construct() {
-	}
+	public function insertGrupo($grupo) {
+		try {
 
-	public function insertGrupo() {
+			$c = new Connection();
+			$con = $c->getConnection();
+
+			$itens = array(
+				'nome' => $grupo->getNome(),
+				'slug' => $grupo->getSlug(),
+				'tipo' => $grupo->getTipo(),
+			);
+
+			$query = 'INSERT INTO controle_financeiro.grupo
+						(nome, slug, tipo)
+					VALUES
+						(:nome, :slug, :tipo);';
+
+			$con = $con->prepare($query);
+			$con->execute($itens);
+
+			include $_SERVER['DOCUMENT_ROOT'] . "/pages/sucesso.src.php";
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
 
 	}
 

@@ -7,14 +7,17 @@
 			<div class="container">
 
 			<div >
-				<table class="produto-layout borda">
+				<table class="produto-layout">
 					<tr>
 						<td>
-								<h2><a href="produto_cadastro">Novo Registro</a></h2>
-						</td>
-
-						<td>
-								<h2><a href="/registro">Histórico</a></h2>
+							<ul>
+								<li>
+									<h2><a href="produto-cadastro">Novo Registro</a></h2>
+								</li>
+								<li>
+									<h2><a href="/produto-historico">Histórico</a></h2>
+								</li>
+							</ul>
 						</td>
 
 					</tr>
