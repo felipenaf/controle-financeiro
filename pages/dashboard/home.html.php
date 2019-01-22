@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<?php include_once ROOT_PATH . "/pages/templates/head.html.php"?>
+	<?php include_once ROOT_PATH . "/pages/_templates/head.html.php"?>
 	<body>
-		<?php include_once ROOT_PATH . "/pages/templates/header.html.php"?>
+		<?php include_once ROOT_PATH . "/pages/_templates/header.html.php"?>
 		<main class="container">
 
 			<div class="space-10"></div>
@@ -12,18 +12,18 @@
 			<table class="dashboard-table" cellspacing="5">
 				<tr>
 					<td></td>
-					<td>JAN</td>
-					<td>FEV</td>
-					<td>MAR</td>
-					<td>ABR</td>
-					<td>MAI</td>
-					<td>JUN</td>
-					<td>JUL</td>
-					<td>AGO</td>
-					<td>SET</td>
-					<td>OUT</td>
-					<td>NOV</td>
-					<td>DEZ</td>
+					<th>JAN</th>
+					<th>FEV</th>
+					<th>MAR</th>
+					<th>ABR</th>
+					<th>MAI</th>
+					<th>JUN</th>
+					<th>JUL</th>
+					<th>AGO</th>
+					<th>SET</th>
+					<th>OUT</th>
+					<th>NOV</th>
+					<th>DEZ</th>
 				</tr>
 <?php foreach ($grupos as $grupo): ?>
 <?php if ($grupo['tipo'] == 1): ?>
@@ -71,18 +71,18 @@
 			<table class="dashboard-table" cellspacing="5">
 				<tr>
 					<td></td>
-					<td>JAN</td>
-					<td>FEV</td>
-					<td>MAR</td>
-					<td>ABR</td>
-					<td>MAI</td>
-					<td>JUN</td>
-					<td>JUL</td>
-					<td>AGO</td>
-					<td>SET</td>
-					<td>OUT</td>
-					<td>NOV</td>
-					<td>DEZ</td>
+					<th>JAN</th>
+					<th>FEV</th>
+					<th>MAR</th>
+					<th>ABR</th>
+					<th>MAI</th>
+					<th>JUN</th>
+					<th>JUL</th>
+					<th>AGO</th>
+					<th>SET</th>
+					<th>OUT</th>
+					<th>NOV</th>
+					<th>DEZ</th>
 				</tr>
 <?php foreach ($grupos as $grupo): ?>
 <?php if ($grupo['tipo'] == 0): ?>
@@ -131,18 +131,18 @@
 
 				<tr>
 					<td></td>
-					<td>JAN</td>
-					<td>FEV</td>
-					<td>MAR</td>
-					<td>ABR</td>
-					<td>MAI</td>
-					<td>JUN</td>
-					<td>JUL</td>
-					<td>AGO</td>
-					<td>SET</td>
-					<td>OUT</td>
-					<td>NOV</td>
-					<td>DEZ</td>
+					<th>JAN</th>
+					<th>FEV</th>
+					<th>MAR</th>
+					<th>ABR</th>
+					<th>MAI</th>
+					<th>JUN</th>
+					<th>JUL</th>
+					<th>AGO</th>
+					<th>SET</th>
+					<th>OUT</th>
+					<th>NOV</th>
+					<th>DEZ</th>
 				</tr>
 
 				<tr>
@@ -167,6 +167,6 @@
 			<div class="space-10"></div>
 		</main>
 
-		<?php include_once ROOT_PATH . "/pages/templates/footer.html.php"?>
+		<?php include_once ROOT_PATH . "/pages/_templates/footer.html.php"?>
 	</body>
 </html>

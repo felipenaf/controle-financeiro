@@ -13,7 +13,7 @@
 				</li>
 
 				<li>
-					<a href="/produto">Produto</a>
+					<a href="/produto/lista">Produto</a>
 				</li>
 
 				<li>
@@ -21,24 +21,9 @@
 				</li>
 
 				<li>
-					<a href="/grupo-cadastro">Grupo</a>
+					<a href="/grupo/lista">Grupo</a>
 				</li>
 
-				<li>
-					|
-				</li>
-
-				<li>
-					<a href="/dashboard">Dashboard</a>
-				</li>
-
-				<li>
-					|
-				</li>
-
-				<li>
-					<a href="/sobre">Sobre</a>
-				</li>
 			</ul>
 		</div>
 

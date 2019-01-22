@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<?php include_once ROOT_PATH . "/pages/templates/head.html.php"?>
+	<?php include_once ROOT_PATH . "/pages/_templates/head.html.php"?>
 	<body>
-		<?php include_once ROOT_PATH . "/pages/templates/header.html.php"?>
+		<?php include_once ROOT_PATH . "/pages/_templates/header.html.php"?>
 		<main>
-			<div class="container" style="background-color: lightgray;">
+			<div class="container">
 				<div class="col-md-5">
 					<div class="space-10"></div>
 					<form action="" method="POST">
@@ -57,6 +57,6 @@
 			</div>
 		</main>
 
-		<?php include_once ROOT_PATH . "/pages/templates/footer.html.php"?>
+		<?php include_once ROOT_PATH . "/pages/_templates/footer.html.php"?>
 	</body>
 </html>

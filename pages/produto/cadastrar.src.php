@@ -12,10 +12,11 @@ if ($_POST) {
 } else {
 	$url = explode("/", $_GET['page']);
 
-	if (!empty($url[1])) {
-		$produto = ProdutoController::getProdutoById($url[1]);
+	if (!empty($url[2])) {
+		$produto = ProdutoController::getProdutoById($url[2]);
 	}
 
 	$grupos = GrupoController::getGrupos();
-	include "$page[0].html.php";
+
+	include "cadastrar.html.php";
 }

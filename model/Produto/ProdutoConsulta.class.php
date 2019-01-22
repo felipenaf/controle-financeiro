@@ -25,7 +25,7 @@ class ProdutoConsulta {
 			$con = $con->prepare($query);
 			$con->execute($itens);
 
-			include $_SERVER['DOCUMENT_ROOT'] . "/pages/sucesso.src.php";
+			include "pages/sucesso.src.php";
 
 		} catch (Exception $e) {
 			echo $e->getMessage();
@@ -56,7 +56,7 @@ class ProdutoConsulta {
 		$con = $con->prepare($query);
 		$con->execute($itens);
 
-		include $_SERVER['DOCUMENT_ROOT'] . "/pages/sucesso.src.php";
+		include "pages/sucesso.src.php";
 
 	}
 	public function deleteProduto() {

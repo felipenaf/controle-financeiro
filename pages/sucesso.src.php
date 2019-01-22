@@ -1,2 +1,2 @@
 <?php
-include "sucesso.html.php";
+include "pages/sucesso.html.php";

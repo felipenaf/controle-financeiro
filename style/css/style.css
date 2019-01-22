@@ -109,24 +109,60 @@ footer .footer{
 
 
 
-/* ----------------- */
-/* PRODUTO HISTÓRICO */
-/* ----------------- */
+/* -------------------------------------------------------- */
+/* ----------------------- LISTA -------------------------- */
+/* -------------------------------------------------------- */
 
-.produto-historico{
+.add-lista{
+    width: 130px;
+}
+
+.add-lista a{
+    text-decoration: none;
+    color: rgb(92, 93, 145);
+}
+
+.add-lista span{
+    font-size: 2.5rem;
+}
+
+.table-lista{
+    border-collapse: collapse;
     width: 100%;
 }
 
-.produto-historico td{
-    padding: 10px;
-    /* border: 1px solid black; */
+.table-lista a{
+    text-decoration: none;
+    color: black;
 }
 
-.produto-historico-title{
+.table-lista a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.table-lista td, .table-lista th{
+    text-align: left;
+    padding: 8px;
+}
+
+.table-lista th{
     background-color: rgb(92, 93, 145);
     color: aquamarine;
 }
 
+.table-lista tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.table-lista tr:hover, .table-lista tr:hover a {
+    background-color: rgb(92, 93, 145); 
+    color: aquamarine;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
 
 
 /* ---------------- */
@@ -154,6 +190,10 @@ footer .footer{
 
 .dashboard-table{
     width: 100%;
+}
+
+.dashboard-table th{
+    border-bottom: 1px solid black;
 }
 
 .dashboard-table .grupo{

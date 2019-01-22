@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<?php include_once ROOT_PATH . "/pages/templates/head.html.php"?>
+	<?php include_once ROOT_PATH . "/pages/_templates/head.html.php"?>
 	<body>
-		<?php include_once ROOT_PATH . "/pages/templates/header.html.php"?>
+		<?php include_once ROOT_PATH . "/pages/_templates/header.html.php"?>
 		<main>
-			<div class="container" style="background-color: lightgray;">
+			<div class="container">
 				<div class="space-10"></div>
 				<form action="" method="POST">
 
 					<div class="form-group">
 						<label for="nome">Nome</label>
-						<input type="text" class="form-control" id="nome" name="nome" aria-describedby="nome" placeholder="ex. Almoço, chocolate, etc..." required>
+						<input type="text" class="form-control" name="nome" required>
 					</div>
 
 					<div class="form-group">
 						<label for="slug">Slug</label>
-						<input type="text" class="form-control" id="slug" name="slug" aria-describedby="slug">
+						<input type="text" class="form-control" name="slug" required>
 					</div>
 
 					<div class="form-group">
@@ -35,6 +35,6 @@
 			</div>
 		</main>
 
-		<?php include_once ROOT_PATH . "/pages/templates/footer.html.php"?>
+		<?php include_once ROOT_PATH . "/pages/_templates/footer.html.php"?>
 	</body>
 </html>

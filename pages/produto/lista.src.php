@@ -5,4 +5,4 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/controller/ProdutoController.class.ph
 $produtos = ProdutoController::getProdutos();
 
 $grupos = GrupoController::getGrupos();
-include "$page[0].html.php";
+include "lista.html.php";

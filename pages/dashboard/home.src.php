@@ -135,4 +135,4 @@ foreach ($produtos as $produto) {
 	}
 }
 
-include_once ROOT_PATH . "/pages/$page[0].html.php";
+include_once "$page[0].html.php";
