@@ -1,0 +1,4 @@
+hostname = localhost
+database = nome_da_base
+username = usuario
+password = xxx
