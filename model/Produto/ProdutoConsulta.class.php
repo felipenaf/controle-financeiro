@@ -5,6 +5,12 @@ require $_SERVER['DOCUMENT_ROOT'] . "/model/Produto/ProdutoModel.class.php";
 
 class ProdutoConsulta {
 
+	private $db;
+
+	public function __construct() {
+		$this->db = parse_ini_file("config/database.ini");
+	}
+
 	public function insertProduto($produto) {
 		try {
 
@@ -17,10 +23,10 @@ class ProdutoConsulta {
 			$itens["valor"] = $produto->getValor();
 			$itens["observacao"] = $produto->getObservacao();
 
-			$query = 'INSERT INTO controle_financeiro.produto
+			$query = "INSERT INTO {$this->db['database']}.produto
 						(descricao, data_criacao, id_grupo, valor, observacao)
 					VALUES
-						(:descricao, :data_criacao, :id_grupo, :valor, :observacao);';
+						(:descricao, :data_criacao, :id_grupo, :valor, :observacao);";
 
 			$con = $con->prepare($query);
 			$con->execute($itens);
@@ -47,11 +53,11 @@ class ProdutoConsulta {
 		$itens["valor"] = $produto->getValor();
 		$itens["observacao"] = $produto->getObservacao();
 
-		$query = 'UPDATE controle_financeiro.produto
+		$query = "UPDATE {$this->db['database']}.produto
 					SET
 						descricao = :descricao, data_criacao = :data_criacao, id_grupo = :id_grupo, valor = :valor, observacao = :observacao
 					WHERE
-						id_produto = :id_produto;';
+						id_produto = :id_produto;";
 
 		$con = $con->prepare($query);
 		$con->execute($itens);
@@ -67,7 +73,7 @@ class ProdutoConsulta {
 		$c = new Connection();
 		$con = $c->getConnection();
 
-		$query = "SELECT * FROM controle_financeiro.produto ORDER BY data_criacao DESC;";
+		$query = "SELECT * FROM {$this->db['database']}.produto ORDER BY data_criacao DESC;";
 
 		$result = $con->query($query);
 
@@ -78,7 +84,7 @@ class ProdutoConsulta {
 		$c = new Connection();
 		$con = $c->getConnection();
 
-		$query = "SELECT * FROM controle_financeiro.produto WHERE id_produto = $id_produto;";
+		$query = "SELECT * FROM {$this->db['database']}.produto WHERE id_produto = $id_produto;";
 
 		$result = $con->query($query);
 

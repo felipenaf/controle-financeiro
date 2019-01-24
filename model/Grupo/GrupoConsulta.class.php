@@ -5,6 +5,12 @@ require $_SERVER['DOCUMENT_ROOT'] . "/model/Grupo/GrupoModel.class.php";
 
 class GrupoConsulta {
 
+	private $db;
+
+	public function __construct() {
+		$this->db = parse_ini_file("config/database.ini");
+	}
+
 	public function insertGrupo($grupo) {
 		try {
 
@@ -17,10 +23,10 @@ class GrupoConsulta {
 				'tipo' => $grupo->getTipo(),
 			);
 
-			$query = 'INSERT INTO controle_financeiro.grupo
+			$query = "INSERT INTO {$this->db['database']}.grupo
 						(nome, slug, tipo)
 					VALUES
-						(:nome, :slug, :tipo);';
+						(:nome, :slug, :tipo);";
 
 			$con = $con->prepare($query);
 			$con->execute($itens);
@@ -48,11 +54,11 @@ class GrupoConsulta {
 				'tipo' => $grupo->getTipo(),
 			);
 
-			$query = 'UPDATE controle_financeiro.grupo
+			$query = "UPDATE {$this->db['database']}.grupo
 					SET
 						nome = :nome, slug = :slug, tipo = :tipo
 					WHERE
-						id_grupo = :id_grupo;';
+						id_grupo = :id_grupo;";
 
 			$con = $con->prepare($query);
 			$con->execute($itens);
@@ -75,7 +81,7 @@ class GrupoConsulta {
 		$c = new Connection();
 		$con = $c->getConnection();
 
-		$query = "SELECT * FROM controle_financeiro.grupo ORDER BY nome;";
+		$query = "SELECT * FROM {$this->db['database']}.grupo ORDER BY nome;";
 
 		$result = $con->query($query);
 
@@ -88,7 +94,7 @@ class GrupoConsulta {
 		$c = new Connection();
 		$con = $c->getConnection();
 
-		$query = "SELECT * FROM controle_financeiro.grupo WHERE id_grupo = $id_grupo;";
+		$query = "SELECT * FROM {$this->db['database']}.grupo WHERE id_grupo = $id_grupo;";
 
 		$result = $con->query($query);
 
