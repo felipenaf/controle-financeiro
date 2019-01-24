@@ -10,24 +10,34 @@
 
 					<div class="form-group">
 						<label for="nome">Nome</label>
-						<input type="text" class="form-control" name="nome" required>
+						<input type="text" class="form-control" name="nome" value="<?=isset($grupo['nome']) ? $grupo['nome'] : ''?>" required>
 					</div>
 
 					<div class="form-group">
 						<label for="slug">Slug</label>
-						<input type="text" class="form-control" name="slug" required>
+						<input type="text" class="form-control" name="slug" value="<?=isset($grupo['slug']) ? $grupo['slug'] : ''?>" required>
 					</div>
 
 					<div class="form-group">
 							<label for="tipo">Tipo</label>
 							<select class="form-control" id="tipo" name="tipo">
+							<?php if ($grupo['tipo'] == 1): ?>
+								<option value="1">Entrada</option>
+								<option value="0">Saída</option>
+							<?php else: ?>
 								<option value="0">Saída</option>
 								<option value="1">Entrada</option>
+							<?php endif;?>
 							</select>
 						</div>
 
 					<div class="form-group">
-						<button class="form-control" type="submit" value="salvar">Salvar</button>
+						<?php if (isset($grupo)): ?>
+							<input type="hidden" name="id_grupo" value="<?=$grupo['id_grupo']?>">
+							<button class="form-control" type="submit" name="botao" value="alterar">Salvar</button>
+						<?php else: ?>
+							<button class="form-control" type="submit" name="botao" value="salvar">Salvar</button>
+						<?php endif;?>
 					</div>
 
 					<div class="space-10"></div>

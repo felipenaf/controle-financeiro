@@ -35,11 +35,38 @@ class GrupoConsulta {
 
 	}
 
-	public function deleteGrupo() {
+	public function updateGrupo($grupo) {
+		try {
 
+			$c = new Connection();
+			$con = $c->getConnection();
+
+			$itens = array(
+				'id_grupo' => $grupo->getIdGrupo(),
+				'nome' => $grupo->getNome(),
+				'slug' => $grupo->getSlug(),
+				'tipo' => $grupo->getTipo(),
+			);
+
+			$query = 'UPDATE controle_financeiro.grupo
+					SET
+						nome = :nome, slug = :slug, tipo = :tipo
+					WHERE
+						id_grupo = :id_grupo;';
+
+			$con = $con->prepare($query);
+			$con->execute($itens);
+
+			include "pages/sucesso.src.php";
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
 	}
 
-	public function updateGrupo() {
+	public function deleteGrupo() {
 
 	}
 
