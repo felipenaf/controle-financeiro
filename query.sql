@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS controle_financeiro;
 CREATE DATABASE controle_financeiro;
 USE controle_financeiro;
 
-CREATE TABLE controle_financeiro.grupo (
+CREATE TABLE grupo (
 	id_grupo int(11) NOT NULL AUTO_INCREMENT,
 	nome varchar(100) NOT NULL,
 	slug varchar(100) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE controle_financeiro.grupo (
 	PRIMARY KEY (id_grupo)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE controle_financeiro.produto (
+CREATE TABLE produto (
 	id_produto int(11) NOT NULL AUTO_INCREMENT,
 	id_grupo int(11) NOT NULL,
 	descricao varchar(255) NOT NULL,
