@@ -4,6 +4,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/controller/ProdutoController.class.ph
 
 $url = explode("/", $_GET['page']);
 
-$produto = ProdutoController::getProdutoById($url[1]);
+if (!empty($url[2])) {
+	$produto = ProdutoController::getProdutoById($url[2]);
+}
 
-include "$page[0].html.php";
+include "excluir.html.php";

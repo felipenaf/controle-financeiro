@@ -32,6 +32,14 @@ class ProdutoController {
 		return $consulta->updateProduto($p);
 	}
 
+	public static function deleteProduto($id_produto) {
+		$p = new ProdutoModel();
+		$p->setIdProduto($id_produto);
+
+		$consulta = new ProdutoConsulta();
+		return $consulta->deleteProduto($p);
+	}
+
 	public static function getProdutos() {
 		$consulta = new ProdutoConsulta();
 		return $consulta->getProdutos();

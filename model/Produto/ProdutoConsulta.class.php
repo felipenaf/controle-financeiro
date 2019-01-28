@@ -65,8 +65,24 @@ class ProdutoConsulta {
 		include "pages/sucesso.src.php";
 
 	}
-	public function deleteProduto() {
 
+	public function deleteProduto($produto) {
+
+		try {
+			$c = new Connection();
+			$con = $c->getConnection();
+
+			$query = "DELETE FROM {$this->db['database']}.produto WHERE id_produto = {$produto->getIdProduto()};";
+
+			$con->query($query);
+
+			include "pages/produto/excluir-confirmar.html.php";
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
 	}
 
 	public function getProdutos() {
