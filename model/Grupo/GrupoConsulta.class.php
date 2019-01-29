@@ -85,7 +85,7 @@ class GrupoConsulta {
 			include "pages/grupo/excluir-confirmar.html.php";
 
 		} catch (Exception $e) {
-			echo $e->getMessage();
+			echo "Erro: " . $e->getMessage();
 		} finally {
 			$c->closeAll();
 		}
