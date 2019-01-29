@@ -72,8 +72,23 @@ class GrupoConsulta {
 		}
 	}
 
-	public function deleteGrupo() {
+	public function deleteGrupo($grupo) {
 
+		try {
+			$c = new Connection();
+			$con = $c->getConnection();
+
+			$query = "DELETE FROM {$this->db['database']}.grupo WHERE id_grupo = {$grupo->getIdGrupo()};";
+
+			$con->query($query);
+
+			include "pages/grupo/excluir-confirmar.html.php";
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
 	}
 
 	public function getGrupos() {

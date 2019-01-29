@@ -28,6 +28,14 @@ class GrupoController {
 		return $consulta->updateGrupo($g);
 	}
 
+	public static function deleteGrupo($id_grupo) {
+		$g = new GrupoModel();
+		$g->setIdGrupo($id_grupo);
+
+		$consulta = new GrupoConsulta();
+		return $consulta->deleteGrupo($g);
+	}
+
 	public static function getGrupos() {
 		$consulta = new GrupoConsulta();
 		return $consulta->getGrupos();
