@@ -146,19 +146,10 @@
 				</tr>
 
 				<tr>
-					<td class="grupo">TOTAL</td>
-					<td>R$ <?=number_format($totalMesEntrada['jan'] - $totalMesSaida['jan'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['fev'] - $totalMesSaida['fev'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['mar'] - $totalMesSaida['mar'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['abr'] - $totalMesSaida['abr'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['mai'] - $totalMesSaida['mai'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['jun'] - $totalMesSaida['jun'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['jul'] - $totalMesSaida['jul'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['ago'] - $totalMesSaida['ago'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['set'] - $totalMesSaida['set'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['out'] - $totalMesSaida['out'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['nov'] - $totalMesSaida['nov'], 2)?></td>
-					<td>R$ <?=number_format($totalMesEntrada['dez'] - $totalMesSaida['dez'], 2)?></td>
+					<td style="width:10%;" class="grupo">TOTAL</td>
+					<?php foreach ($totalMes as $total): ?>
+						<td style="width:8%;">R$ <?=number_format($total, 2)?></td>
+					<?php endforeach;?>
 				</tr>
 
 			</table>
