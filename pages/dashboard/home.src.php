@@ -72,7 +72,7 @@ foreach ($produtos as $produto) {
 			$totalMes['jun'] = $totalMesEntrada['jun'] - $totalMesSaida['jun'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-07-01" && $produto['data_criacao'] <= "2019-07-31 00:00:00")) {
+		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-07-01" && $produto['data_criacao'] <= "2019-07-31")) {
 			$grupos[$key]['jul'] = $grupos[$key]['jul'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -139,7 +139,5 @@ foreach ($produtos as $produto) {
 		}
 	}
 }
-
-$totalMes = array_reverse($totalMes);
 
 include_once "$page[0].html.php";

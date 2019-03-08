@@ -89,7 +89,7 @@ class ProdutoConsulta {
 		$c = new Connection();
 		$con = $c->getConnection();
 
-		$query = "SELECT * FROM {$this->db['database']}.produto ORDER BY data_criacao DESC;";
+		$query = "SELECT id_produto, id_grupo, descricao, valor, observacao, DATE_FORMAT(data_criacao, '%Y-%m-%d') as data_criacao, data_modificacao FROM {$this->db['database']}.produto ORDER BY data_criacao ASC;";
 
 		$result = $con->query($query);
 
