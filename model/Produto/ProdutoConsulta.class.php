@@ -13,15 +13,16 @@ class ProdutoConsulta {
 
 	public function insertProduto($produto) {
 		try {
-
 			$c = new Connection();
 			$con = $c->getConnection();
 
-			$itens["descricao"] = $produto->getDescricao();
-			$itens["data_criacao"] = $produto->getDataCriacao();
-			$itens["id_grupo"] = $produto->getIdGrupo();
-			$itens["valor"] = $produto->getValor();
-			$itens["observacao"] = $produto->getObservacao();
+			$itens = array(
+				"descricao" => $produto->getDescricao(),
+				"data_criacao" => $produto->getDataCriacao(),
+				"id_grupo" => $produto->getIdGrupo(),
+				"valor" => $produto->getValor(),
+				"observacao" => $produto->getObservacao(),
+			);
 
 			$query = "INSERT INTO {$this->db['database']}.produto
 						(descricao, data_criacao, id_grupo, valor, observacao)
@@ -38,43 +39,49 @@ class ProdutoConsulta {
 		} finally {
 			$c->closeAll();
 		}
-
 	}
 
 	public function updateProduto($produto) {
-
-		$c = new Connection();
-		$con = $c->getConnection();
-
-		$itens['id_produto'] = $produto->getIdProduto();
-		$itens["descricao"] = $produto->getDescricao();
-		$itens["data_criacao"] = $produto->getDataCriacao();
-		$itens["id_grupo"] = $produto->getIdGrupo();
-		$itens["valor"] = $produto->getValor();
-		$itens["observacao"] = $produto->getObservacao();
-
-		$query = "UPDATE {$this->db['database']}.produto
-					SET
-						descricao = :descricao, data_criacao = :data_criacao, id_grupo = :id_grupo, valor = :valor, observacao = :observacao
-					WHERE
-						id_produto = :id_produto;";
-
-		$con = $con->prepare($query);
-		$con->execute($itens);
-
-		include "pages/sucesso.src.php";
-
-	}
-
-	public function deleteProduto($produto) {
-
 		try {
 			$c = new Connection();
 			$con = $c->getConnection();
 
-			$query = "DELETE FROM {$this->db['database']}.produto WHERE id_produto = {$produto->getIdProduto()};";
+			$itens = array(
+				"id_produto" => $produto->getIdProduto(),
+				"descricao" => $produto->getDescricao(),
+				"data_criacao" => $produto->getDataCriacao(),
+				"id_grupo" => $produto->getIdGrupo(),
+				"valor" => $produto->getValor(),
+				"observacao" => $produto->getObservacao(),
+			);
 
-			$con->query($query);
+			$query = "UPDATE {$this->db['database']}.produto
+						SET
+							descricao = :descricao, data_criacao = :data_criacao, id_grupo = :id_grupo, valor = :valor, observacao = :observacao
+						WHERE
+							id_produto = :id_produto;";
+
+			$con = $con->prepare($query);
+			$con->execute($itens);
+
+			include "pages/sucesso.src.php";
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
+	}
+
+	public function deleteProduto($produto) {
+		try {
+			$c = new Connection();
+			$con = $c->getConnection();
+			$id_produto = $produto->getIdProduto();
+			$query = "DELETE FROM {$this->db['database']}.produto WHERE id_produto = :id_produto;";
+			$stmt = $con->prepare($query);
+			$stmt->bindValue(":id_produto", $id_produto);
+			$stmt->execute();
 
 			include "pages/produto/excluir-confirmar.html.php";
 
@@ -86,25 +93,44 @@ class ProdutoConsulta {
 	}
 
 	public function getProdutos() {
-		$c = new Connection();
-		$con = $c->getConnection();
+		try {
+			$c = new Connection();
+			$con = $c->getConnection();
 
-		$query = "SELECT id_produto, id_grupo, descricao, valor, observacao, DATE_FORMAT(data_criacao, '%Y-%m-%d') as data_criacao, data_modificacao FROM {$this->db['database']}.produto ORDER BY data_criacao ASC;";
+			$query = "SELECT id_produto, id_grupo, descricao, valor, observacao, DATE_FORMAT(data_criacao, '%Y-%m-%d') as data_criacao, data_modificacao
+						FROM
+							{$this->db['database']}.produto
+						ORDER BY
+							data_criacao ASC;";
 
-		$result = $con->query($query);
+			$result = $con->query($query);
 
-		return $result->fetchAll(PDO::FETCH_ASSOC);
+			return $result->fetchAll(PDO::FETCH_ASSOC);
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
 	}
 
 	public function getProdutoById($id_produto) {
-		$c = new Connection();
-		$con = $c->getConnection();
+		try {
+			$c = new Connection();
+			$con = $c->getConnection();
 
-		$query = "SELECT * FROM {$this->db['database']}.produto WHERE id_produto = $id_produto;";
+			$query = "SELECT * FROM {$this->db['database']}.produto WHERE id_produto = :id_produto;";
 
-		$result = $con->query($query);
+			$stmt = $con->prepare($query);
+			$stmt->bindValue(":id_produto", $id_produto);
+			$stmt->execute();
 
-		return $result->fetch(PDO::FETCH_ASSOC);
+			return $stmt->fetch(PDO::FETCH_ASSOC);
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
 	}
-
 }
