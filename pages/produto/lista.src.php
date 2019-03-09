@@ -4,5 +4,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/controller/ProdutoController.class.ph
 
 $produtos = ProdutoController::getProdutos();
 
-$grupos = GrupoController::getGrupos();
+foreach ($produtos as $key => $produto) {
+	$produtos[$key]['grupo'] = GrupoController::getGrupoById($produto['id_grupo'])['nome'];
+}
+
 include "lista.html.php";
