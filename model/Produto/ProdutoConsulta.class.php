@@ -101,7 +101,7 @@ class ProdutoConsulta {
 						FROM
 							{$this->db['database']}.produto
 						ORDER BY
-							data_criacao ASC;";
+							data_criacao DESC;";
 
 			$result = $con->query($query);
 
