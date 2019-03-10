@@ -1,6 +1,4 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/controller/GrupoController.class.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/controller/ProdutoController.class.php";
 
 $grupos = GrupoController::getGrupos();
 $produtos = ProdutoController::getProdutos();

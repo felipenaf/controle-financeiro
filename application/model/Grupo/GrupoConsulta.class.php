@@ -1,8 +1,5 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/model/db/Connection.class.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/model/Grupo/GrupoModel.class.php";
-
 class GrupoConsulta {
 
 	private $db;

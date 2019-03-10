@@ -1,0 +1,10 @@
+{
+	"config": {
+		"secure-http": false
+	},
+	"autoload": {
+		"classmap": [
+			"application/"
+		]
+	}
+}
