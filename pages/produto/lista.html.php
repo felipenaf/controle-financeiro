@@ -25,17 +25,17 @@
 							<th colspan="2"></th>
 						</tr>
 
-					<?php foreach ($produtos as $produto): ?>
-						<tr>
-							<td><?=$produto['descricao']?></td>
-							<td>R$ <?=number_format($produto['valor'], 2, ',', '.')?></td>
-							<td><?=GrupoController::getGrupoById($produto['id_grupo'])['nome']?></td>
-							<td><?=date('d/m/Y', strtotime($produto['data_criacao']))?></td>
-							<td><?=$produto['observacao']?></td>
-							<td><a href="cadastrar/<?=$produto['id_produto']?>">Editar</a></td>
-							<td><a href="excluir/<?=$produto['id_produto']?>">Excluir</a></td>
-						</tr>
-					<?php endforeach;?>
+						<?php foreach ($produtos as $produto): ?>
+							<tr>
+								<td><?=$produto['descricao']?></td>
+								<td>R$ <?=number_format($produto['valor'], 2, ',', '.')?></td>
+								<td><?=$produto['grupo']?></td>
+								<td><?=date('d/m/Y', strtotime($produto['data_criacao']))?></td>
+								<td><?=$produto['observacao']?></td>
+								<td><a href="cadastrar/<?=$produto['id_produto']?>">Editar</a></td>
+								<td><a href="excluir/<?=$produto['id_produto']?>">Excluir</a></td>
+							</tr>
+						<?php endforeach;?>
 					</table>
 
 				<div class="space-10"></div>

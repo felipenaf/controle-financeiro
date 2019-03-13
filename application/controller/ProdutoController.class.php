@@ -1,8 +1,5 @@
 <?php
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/model/Produto/ProdutoConsulta.class.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/model/Produto/ProdutoModel.class.php";
-
 class ProdutoController {
 
 	public static function insertProduto($produto) {

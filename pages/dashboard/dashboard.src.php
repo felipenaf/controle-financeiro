@@ -1,6 +1,4 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/controller/GrupoController.class.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/controller/ProdutoController.class.php";
 
 $grupos = GrupoController::getGrupos();
 $produtos = ProdutoController::getProdutos();
@@ -140,4 +138,5 @@ foreach ($produtos as $produto) {
 	}
 }
 
-include_once "$page[0].html.php";
+$totalMes = array_reverse($totalMes);
+include_once "dashboard.html.php";
