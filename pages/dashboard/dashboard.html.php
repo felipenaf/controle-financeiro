@@ -11,7 +11,7 @@
 
 			<table class="dashboard-table" cellspacing="5">
 				<tr>
-					<td></td>
+					<td class="first-column"></td>
 					<th>JAN</th>
 					<th>FEV</th>
 					<th>MAR</th>
@@ -70,7 +70,7 @@
 
 			<table class="dashboard-table" cellspacing="5">
 				<tr>
-					<td></td>
+					<td class="first-column"></td>
 					<th>JAN</th>
 					<th>FEV</th>
 					<th>MAR</th>
@@ -130,7 +130,7 @@
 			<table class="dashboard-table">
 
 				<tr>
-					<td></td>
+					<td class="first-column"></td>
 					<th>JAN</th>
 					<th>FEV</th>
 					<th>MAR</th>
@@ -146,10 +146,19 @@
 				</tr>
 
 				<tr>
-					<td style="width:10%;" class="grupo">TOTAL</td>
-					<?php foreach ($totalMes as $total): ?>
-						<td style="width:8%;">R$ <?=number_format($total, 2)?></td>
-					<?php endforeach;?>
+					<td class="grupo">TOTAL</td>
+					<td> R$ <?=number_format($totalMes['jan'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['fev'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['mar'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['abr'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['mai'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['jun'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['jul'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['ago'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['set'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['out'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['nov'], 2)?></td>
+					<td> R$ <?=number_format($totalMes['dez'], 2)?></td>
 				</tr>
 
 			</table>

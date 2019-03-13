@@ -208,7 +208,6 @@ footer .footer{
 .dashboard-table td{
     border-bottom: 1px solid black;
     text-align: center;
-    width: 5%;
     height: 15px;
     font-size: 0.9rem;
 }
@@ -226,4 +225,8 @@ footer .footer{
 .dashboard-saldo{
     font-size: 2rem;
     color: rgb(34, 173, 155);
+}
+
+.dashboard-table .first-column{
+    width: 120px;
 }
