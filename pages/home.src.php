@@ -1,2 +1,2 @@
 <?php
-include_once ROOT_PATH . "/pages/dashboard/dashboard.src.php";
+include_once "login/home.src.php";
