@@ -6,7 +6,7 @@
 		<main class="container">
 
 			<div class="space-10"></div>
-			<div class="container center dashboard-receita">RECEITA</div>
+			<div class="container center dashboard-receita"><?php var_dump($_SESSION['usuario'])?></div>
 			<div class="space-5"></div>
 
 			<table class="dashboard-table" cellspacing="5">

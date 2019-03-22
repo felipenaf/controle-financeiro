@@ -139,4 +139,4 @@ foreach ($produtos as $produto) {
 }
 
 $totalMes = array_reverse($totalMes);
-include_once "dashboard.html.php";
+include_once "home.html.php";

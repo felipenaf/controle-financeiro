@@ -21,7 +21,7 @@
 							</div>
 
 							<div class="form-group">
-								<input type="submit" class="form-control" name="entrar" value="Entrar">
+								<input type="submit" class="form-control" value="Entrar">
 							</div>
 
 							<table cellspacing="10">
@@ -30,8 +30,6 @@
 									<td><a href="#">Cadastre-se</a></td>
 								</tr>
 							</table>
-
-
 						</div>
 
 					</form>

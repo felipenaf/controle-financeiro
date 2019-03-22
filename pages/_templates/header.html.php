@@ -24,6 +24,14 @@
 					<a href="/grupo/lista">Grupo</a>
 				</li>
 
+				<li>
+					|
+				</li>
+
+				<li>
+					<a href="/logout">Sair</a>
+				</li>
+
 			</ul>
 		</div>
 

@@ -1,2 +1,2 @@
 <?php
-include_once "login/home.src.php";
+include_once "dashboard/home.src.php";
