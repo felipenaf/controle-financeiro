@@ -29,7 +29,7 @@
 				</li>
 
 				<li>
-					<a href="/logout">Sair</a>
+					<a href="/autenticacao/logout">Sair</a>
 				</li>
 
 			</ul>

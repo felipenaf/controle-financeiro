@@ -17,13 +17,18 @@ if (isset($_GET['page']) && $_GET['page'] != 'home') {
 		$file = $page[0] . ".src.php";
 	}
 } else {
-	$page[] = 'home';
-	$file = $page[0] . ".src.php";
+	if (empty($_SESSION['usuario'])) {
+		$page[] = 'autenticacao/login';
+		$file = $page[0] . ".src.php";
+	} else {
+		$page[] = 'home';
+		$file = $page[0] . ".src.php";
+	}
 }
 
-if ($file != "login.src.php") {
+if ($file != "autenticacao/login.src.php") {
 	if (empty($_SESSION['usuario'])) {
-		header("location: /login");
+		header("location: /autenticacao/login&erro=1");
 	} elseif (file_exists("pages/$file")) {
 		include "pages/$file";
 	} else {
