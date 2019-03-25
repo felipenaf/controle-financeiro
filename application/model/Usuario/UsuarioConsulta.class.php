@@ -31,4 +31,28 @@ class UsuarioConsulta {
 		}
 	}
 
+	public function insertUsuario($usuario) {
+		try {
+			$c = new Connection();
+			$con = $c->getConnection();
+			$itens = array(
+				'login' => $usuario->getLogin(),
+				'senha' => $usuario->getSenha(),
+				'nome' => $usuario->getNome(),
+			);
+			$query = "INSERT INTO {$this->db['database']}.usuario
+						(login, senha, nome)
+					VALUES
+						(:login, :senha, :nome);";
+			$con = $con->prepare($query);
+			$con->execute($itens);
+			include "pages/login.src.php";
+
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		} finally {
+			$c->closeAll();
+		}
+	}
+
 }

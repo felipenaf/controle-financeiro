@@ -28,7 +28,7 @@
 								<input type="submit" class="form-control" value="Entrar">
 							</div>
 							<br>
-							<a href="#">Cadastre-se</a>
+							<a href="/usuario/cadastrar">Cadastre-se</a>
 
 						</div>
 					</form>
