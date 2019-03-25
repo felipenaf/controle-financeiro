@@ -17,16 +17,15 @@
 							<?php endif;?>
 
 							<div class="form-group">
-								<input type="text" class="form-control" name="nome" placeholder="Nome" required>
-							</div>
-
-
-							<div class="form-group">
-								<input type="text" class="form-control" name="login" placeholder="login" required>
+								<input type="text" class="form-control" name="nome" placeholder="Nome" minlength="5" required>
 							</div>
 
 							<div class="form-group">
-								<input type="password" class="form-control" name="senha" placeholder="senha" required>
+								<input type="text" class="form-control" name="login" placeholder="login" minlength="3" required>
+							</div>
+
+							<div class="form-group">
+								<input type="password" class="form-control" name="senha" placeholder="senha" minlength="3" required>
 							</div>
 
 							<div class="form-group">
