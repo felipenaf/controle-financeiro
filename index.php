@@ -26,9 +26,15 @@ if (isset($_GET['page']) && $_GET['page'] != 'home') {
 	}
 }
 
-if ($file != "autenticacao/login.src.php") {
-	if (empty($_SESSION['usuario'])) {
-		header("location: /autenticacao/login&erro=1");
+if ($file != "usuario/cadastrar.src.php") {
+	if ($file != "autenticacao/login.src.php") {
+		if (empty($_SESSION['usuario'])) {
+			header("location: /autenticacao/login&erro=1");
+		} elseif (file_exists("pages/$file")) {
+			include "pages/$file";
+		} else {
+			include "pages/notFound.src.php";
+		}
 	} elseif (file_exists("pages/$file")) {
 		include "pages/$file";
 	} else {

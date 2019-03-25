@@ -1,7 +1,9 @@
 <?php
 
+unset($_SESSION['usuario']);
+
 if ($_POST) {
-	$usuario = UsuarioController::verificaLogin($_POST['login'], $_POST['senha']);
+	$usuario = UsuarioController::verificaLoginSenha($_POST['login'], $_POST['senha']);
 	if (!empty($usuario)) {
 		$_SESSION['usuario'] = $usuario;
 		header("location: /");

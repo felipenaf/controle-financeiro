@@ -8,6 +8,7 @@
 				<div class="col-md-5">
 					<div class="space-10"></div>
 					<form action="" method="POST">
+					<input type="hidden" name="id_usuario" value="<?=$_SESSION['usuario']['id_usuario']?>">
 
 						<div class="form-group">
 							<label for="descricao">Descrição</label>
@@ -22,13 +23,13 @@
 						<div class="form-group">
 							<label for="grupo">Grupo</label>
 							<select class="form-control" id="id_grupo" name="id_grupo">
-						<?php foreach ($grupos as $grupo): ?>
-							<?php if (isset($produto) && $produto['id_grupo'] == $grupo['id_grupo']): ?>
-								<option name="id_grupo" value="<?=$grupo['id_grupo']?>" selected><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
-							<?php else: ?>
-								<option name="id_grupo" value="<?=$grupo['id_grupo']?>"><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
-							<?php endif;?>
-						<?php endforeach;?>
+							<?php foreach ($grupos as $grupo): ?>
+								<?php if (isset($produto) && $produto['id_grupo'] == $grupo['id_grupo']): ?>
+									<option name="id_grupo" value="<?=$grupo['id_grupo']?>" selected><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
+								<?php else: ?>
+									<option name="id_grupo" value="<?=$grupo['id_grupo']?>"><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
+								<?php endif;?>
+							<?php endforeach;?>
 							</select>
 						</div>
 

@@ -14,6 +14,7 @@ class ProdutoConsulta {
 			$con = $c->getConnection();
 
 			$itens = array(
+				"id_usuario" => $produto->getIdUsuario(),
 				"descricao" => $produto->getDescricao(),
 				"data_criacao" => $produto->getDataCriacao(),
 				"id_grupo" => $produto->getIdGrupo(),
@@ -22,9 +23,9 @@ class ProdutoConsulta {
 			);
 
 			$query = "INSERT INTO {$this->db['database']}.produto
-						(descricao, data_criacao, id_grupo, valor, observacao)
+						(id_usuario, descricao, data_criacao, id_grupo, valor, observacao)
 					VALUES
-						(:descricao, :data_criacao, :id_grupo, :valor, :observacao);";
+						(:id_usuario, :descricao, :data_criacao, :id_grupo, :valor, :observacao);";
 
 			$con = $con->prepare($query);
 			$con->execute($itens);
@@ -44,6 +45,7 @@ class ProdutoConsulta {
 			$con = $c->getConnection();
 
 			$itens = array(
+				"id_usuario" => $produto->getIdUsuario(),
 				"id_produto" => $produto->getIdProduto(),
 				"descricao" => $produto->getDescricao(),
 				"data_criacao" => $produto->getDataCriacao(),
@@ -54,7 +56,7 @@ class ProdutoConsulta {
 
 			$query = "UPDATE {$this->db['database']}.produto
 						SET
-							descricao = :descricao, data_criacao = :data_criacao, id_grupo = :id_grupo, valor = :valor, observacao = :observacao
+							id_usuario = :id_usuario, descricao = :descricao, data_criacao = :data_criacao, id_grupo = :id_grupo, valor = :valor, observacao = :observacao
 						WHERE
 							id_produto = :id_produto;";
 
@@ -89,7 +91,7 @@ class ProdutoConsulta {
 		}
 	}
 
-	public function getProdutos() {
+	public function getProdutos($id_usuario) {
 		try {
 			$c = new Connection();
 			$con = $c->getConnection();
@@ -97,12 +99,16 @@ class ProdutoConsulta {
 			$query = "SELECT id_produto, id_grupo, descricao, valor, observacao, DATE_FORMAT(data_criacao, '%Y-%m-%d') as data_criacao, data_modificacao
 						FROM
 							{$this->db['database']}.produto
+						WHERE
+							id_usuario = :id_usuario
 						ORDER BY
 							data_criacao DESC;";
 
-			$result = $con->query($query);
+			$stmt = $con->prepare($query);
+			$stmt->bindValue(":id_usuario", $id_usuario);
+			$stmt->execute();
 
-			return $result->fetchAll(PDO::FETCH_ASSOC);
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		} catch (Exception $e) {
 			echo $e->getMessage();

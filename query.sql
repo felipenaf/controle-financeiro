@@ -4,9 +4,9 @@ USE controle_financeiro;
 
 CREATE TABLE usuario(
 	id_usuario int(11) NOT NULL AUTO_INCREMENT,
+	nome varchar(255),
 	login varchar(255) NOT NULL,
 	senha varchar(255) NOT NULL,
-	nome varchar(255),
 	PRIMARY KEY (id_usuario)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

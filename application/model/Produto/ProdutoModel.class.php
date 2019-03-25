@@ -4,6 +4,7 @@ class ProdutoModel {
 
 	private $id_produto;
 	private $id_grupo;
+	private $id_usuario;
 	private $descricao;
 	private $valor;
 	private $observacao;
@@ -44,6 +45,22 @@ class ProdutoModel {
 		$this->id_grupo = $id_grupo;
 
 		return $this;
+	}
+
+	/**
+	 * Get the value of id_usuario
+	 */
+	public function getIdUsuario() {
+		return $this->id_usuario;
+	}
+
+	/**
+	 * Set the value of id_usuario
+	 *
+	 * @return  self
+	 */
+	public function setIdUsuario($id_usuario) {
+		$this->id_usuario = $id_usuario;
 	}
 
 	/**
@@ -135,4 +152,5 @@ class ProdutoModel {
 
 		return $this;
 	}
+
 }

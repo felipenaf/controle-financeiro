@@ -1,7 +1,7 @@
 <?php
 
 $grupos = GrupoController::getGrupos();
-$produtos = ProdutoController::getProdutos();
+$produtos = ProdutoController::getProdutos($_SESSION['usuario']['id_usuario']);
 
 foreach ($produtos as $produto) {
 	foreach ($grupos as $key => $grupo) {
