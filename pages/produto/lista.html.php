@@ -8,7 +8,7 @@
 				<div class="space-10"></div>
 				<div class="add-lista">
 					<a href="cadastrar">
-						<img src="/style/img/add.png" alt="Add" width="30px">
+						<img src="/assets/img/add.png" alt="Add" width="30px">
 						<span>Novo</span>
 					</a>
 				</div>

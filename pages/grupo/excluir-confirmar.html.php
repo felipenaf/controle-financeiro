@@ -7,7 +7,7 @@
 
 			<h1>Grupo excluído com sucesso</h1>
 
-			<a href="../lista"><img src="/style/img/voltar.png" alt="Voltar" width="50px" title="Voltar"></a>
+			<a href="../lista"><img src="/assets/img/voltar.png" alt="Voltar" width="50px" title="Voltar"></a>
 
 		</main>
 

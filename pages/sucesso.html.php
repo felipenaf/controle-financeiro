@@ -6,7 +6,7 @@
 		<main class="container">
 
 			<h1>Dados salvos com sucesso.</h1>
-			<a href="/<?=explode('/', $_GET['page'])[0]?>/lista"><img src="/style/img/voltar.png" alt="Voltar" width="50px" title="Voltar"></a>
+			<a href="/<?=explode('/', $_GET['page'])[0]?>/lista"><img src="/assets/img/voltar.png" alt="Voltar" width="50px" title="Voltar"></a>
 
 		</main>
 
