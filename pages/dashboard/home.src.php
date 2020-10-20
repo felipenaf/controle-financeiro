@@ -5,7 +5,7 @@ $produtos = ProdutoController::getProdutos($_SESSION['usuario']['id_usuario']);
 
 foreach ($produtos as $produto) {
 	foreach ($grupos as $key => $grupo) {
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-01-01" && $produto['data_criacao'] <= "2019-01-31")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-01-01" && $produto['data_criacao'] <= "2019-01-31")) {
 			$grupos[$key]['jan'] = $grupos[$key]['jan'] + $produto['valor'];
 			if ($grupo['tipo'] == 0) {
 				$totalMesSaida['jan'] = $totalMesSaida['jan'] + $produto['valor'];
@@ -15,7 +15,7 @@ foreach ($produtos as $produto) {
 			$totalMes['jan'] = $totalMesEntrada['jan'] - $totalMesSaida['jan'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-02-01" && $produto['data_criacao'] <= "2019-02-28")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-02-01" && $produto['data_criacao'] <= "2019-02-28")) {
 			$grupos[$key]['fev'] = $grupos[$key]['fev'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -26,7 +26,7 @@ foreach ($produtos as $produto) {
 			$totalMes['fev'] = $totalMesEntrada['fev'] - $totalMesSaida['fev'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-03-01" && $produto['data_criacao'] <= "2019-03-31")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-03-01" && $produto['data_criacao'] <= "2019-03-31")) {
 			$grupos[$key]['mar'] = $grupos[$key]['mar'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -37,7 +37,7 @@ foreach ($produtos as $produto) {
 			$totalMes['mar'] = $totalMesEntrada['mar'] - $totalMesSaida['mar'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-04-01" && $produto['data_criacao'] <= "2019-04-30")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-04-01" && $produto['data_criacao'] <= "2019-04-30")) {
 			$grupos[$key]['abr'] = $grupos[$key]['abr'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -48,7 +48,7 @@ foreach ($produtos as $produto) {
 			$totalMes['abr'] = $totalMesEntrada['abr'] - $totalMesSaida['abr'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-05-01" && $produto['data_criacao'] <= "2019-05-31")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-05-01" && $produto['data_criacao'] <= "2019-05-31")) {
 			$grupos[$key]['mai'] = $grupos[$key]['mai'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -59,7 +59,7 @@ foreach ($produtos as $produto) {
 			$totalMes['mai'] = $totalMesEntrada['mai'] - $totalMesSaida['mai'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-06-01" && $produto['data_criacao'] <= "2019-06-30")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-06-01" && $produto['data_criacao'] <= "2019-06-30")) {
 			$grupos[$key]['jun'] = $grupos[$key]['jun'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -70,7 +70,7 @@ foreach ($produtos as $produto) {
 			$totalMes['jun'] = $totalMesEntrada['jun'] - $totalMesSaida['jun'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-07-01" && $produto['data_criacao'] <= "2019-07-31")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-07-01" && $produto['data_criacao'] <= "2019-07-31")) {
 			$grupos[$key]['jul'] = $grupos[$key]['jul'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -81,7 +81,7 @@ foreach ($produtos as $produto) {
 			$totalMes['jul'] = $totalMesEntrada['jul'] - $totalMesSaida['jul'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-08-01" && $produto['data_criacao'] <= "2019-08-31")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-08-01" && $produto['data_criacao'] <= "2019-08-31")) {
 			$grupos[$key]['ago'] = $grupos[$key]['ago'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -92,7 +92,7 @@ foreach ($produtos as $produto) {
 			$totalMes['ago'] = $totalMesEntrada['ago'] - $totalMesSaida['ago'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-09-01" && $produto['data_criacao'] <= "2019-09-30")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-09-01" && $produto['data_criacao'] <= "2019-09-30")) {
 			$grupos[$key]['set'] = $grupos[$key]['set'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -103,7 +103,7 @@ foreach ($produtos as $produto) {
 			$totalMes['set'] = $totalMesEntrada['set'] - $totalMesSaida['set'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-10-01" && $produto['data_criacao'] <= "2019-10-31")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-10-01" && $produto['data_criacao'] <= "2019-10-31")) {
 			$grupos[$key]['out'] = $grupos[$key]['out'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -114,7 +114,7 @@ foreach ($produtos as $produto) {
 			$totalMes['out'] = $totalMesEntrada['out'] - $totalMesSaida['out'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-11-01" && $produto['data_criacao'] <= "2019-11-30")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-11-01" && $produto['data_criacao'] <= "2019-11-30")) {
 			$grupos[$key]['nov'] = $grupos[$key]['nov'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {
@@ -125,7 +125,7 @@ foreach ($produtos as $produto) {
 			$totalMes['nov'] = $totalMesEntrada['nov'] - $totalMesSaida['nov'];
 		}
 
-		if (($produto['id_grupo'] == $grupo['id_grupo']) && ($produto['data_criacao'] >= "2019-12-01" && $produto['data_criacao'] <= "2019-12-31")) {
+		if (($produto['id_grupo'] == $grupo['id']) && ($produto['data_criacao'] >= "2019-12-01" && $produto['data_criacao'] <= "2019-12-31")) {
 			$grupos[$key]['dez'] = $grupos[$key]['dez'] + $produto['valor'];
 
 			if ($grupo['tipo'] == 0) {

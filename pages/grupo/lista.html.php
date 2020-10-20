@@ -28,8 +28,8 @@
 							<td><?=$grupo['nome']?></td>
 							<td><?=$grupo['slug']?></td>
 							<td><?=$grupo['tipo'] == 0 ? 'Saída' : 'Entrada'?></td>
-							<td><a href="cadastrar/<?=$grupo['id_grupo']?>">Editar</a></td>
-							<td><a href="excluir/<?=$grupo['id_grupo']?>">Excluir</a></td>
+							<td><a href="cadastrar/<?=$grupo['id']?>">Editar</a></td>
+							<td><a href="excluir/<?=$grupo['id']?>">Excluir</a></td>
 						</tr>
 					<?php endforeach;?>
 					</table>

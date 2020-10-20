@@ -2,7 +2,7 @@
 
 class ProdutoModel {
 
-	private $id_produto;
+	private $id;
 	private $id_grupo;
 	private $id_usuario;
 	private $descricao;
@@ -12,19 +12,19 @@ class ProdutoModel {
 	private $data_modificacao;
 
 	/**
-	 * Get the value of id_produto
+	 * Get the value of id
 	 */
 	public function getIdProduto() {
-		return $this->id_produto;
+		return $this->id;
 	}
 
 	/**
-	 * Set the value of id_produto
+	 * Set the value of id
 	 *
 	 * @return  self
 	 */
-	public function setIdProduto($id_produto) {
-		$this->id_produto = $id_produto;
+	public function setIdProduto($id) {
+		$this->id = $id;
 
 		return $this;
 	}

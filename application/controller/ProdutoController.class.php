@@ -20,7 +20,7 @@ class ProdutoController {
 
 		$p = new ProdutoModel();
 		$p->setIdUsuario($produto['id_usuario']);
-		$p->setIdProduto($produto['id_produto']);
+		$p->setIdProduto($produto['id']);
 		$p->setDescricao(!empty($produto['descricao']) ? $produto['descricao'] : NULL);
 		$p->setDataCriacao($produto['data_criacao']);
 		$p->setIdGrupo($produto['id_grupo']);
@@ -31,9 +31,9 @@ class ProdutoController {
 		return $consulta->updateProduto($p);
 	}
 
-	public static function deleteProduto($id_produto) {
+	public static function deleteProduto($id) {
 		$p = new ProdutoModel();
-		$p->setIdProduto($id_produto);
+		$p->setIdProduto($id);
 
 		$consulta = new ProdutoConsulta();
 		return $consulta->deleteProduto($p);
@@ -44,9 +44,9 @@ class ProdutoController {
 		return $consulta->getProdutos($id_usuario);
 	}
 
-	public static function getProdutoById($id_produto) {
+	public static function getProdutoById($id) {
 		$consulta = new ProdutoConsulta();
-		return $consulta->getProdutoById($id_produto);
+		return $consulta->getProdutoById($id);
 	}
 
 }

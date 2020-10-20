@@ -33,7 +33,7 @@
 
 					<div class="form-group">
 						<?php if (isset($grupo)): ?>
-							<input type="hidden" name="id_grupo" value="<?=$grupo['id_grupo']?>">
+							<input type="hidden" name="id_grupo" value="<?=$grupo['id']?>">
 							<button class="form-control" type="submit" name="botao" value="alterar">Salvar</button>
 						<?php else: ?>
 							<button class="form-control" type="submit" name="botao" value="salvar">Salvar</button>

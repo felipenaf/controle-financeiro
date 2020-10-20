@@ -24,10 +24,10 @@
 							<label for="grupo">Grupo</label>
 							<select class="form-control" id="id_grupo" name="id_grupo">
 							<?php foreach ($grupos as $grupo): ?>
-								<?php if (isset($produto) && $produto['id_grupo'] == $grupo['id_grupo']): ?>
-									<option name="id_grupo" value="<?=$grupo['id_grupo']?>" selected><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
+								<?php if (isset($produto) && $produto['id_grupo'] == $grupo['id']): ?>
+									<option name="id_grupo" value="<?=$grupo['id']?>" selected><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
 								<?php else: ?>
-									<option name="id_grupo" value="<?=$grupo['id_grupo']?>"><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
+									<option name="id_grupo" value="<?=$grupo['id']?>"><?=$grupo['nome']?> - <?=$grupo['tipo'] == 0 ? '(S)' : '(E)'?></option>
 								<?php endif;?>
 							<?php endforeach;?>
 							</select>
@@ -45,7 +45,7 @@
 
 						<div class="form-group">
 						<?php if (isset($produto)): ?>
-							<input type="hidden" name="id_produto" value="<?=$produto['id_produto']?>">
+							<input type="hidden" name="id" value="<?=$produto['id']?>">
 							<button class="form-control" name="botao" type="submit" value="alterar">Salvar</button>
 						<?php else: ?>
 							<button class="form-control" name="botao" type="submit" value="salvar">Salvar</button>

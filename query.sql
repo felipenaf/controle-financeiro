@@ -11,15 +11,15 @@ CREATE TABLE usuario(
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE grupo (
-	id_grupo int(11) NOT NULL AUTO_INCREMENT,
+	id int(11) NOT NULL AUTO_INCREMENT,
 	nome varchar(100) NOT NULL,
 	slug varchar(100) NOT NULL,
 	tipo TINYINT NOT NULL,
-	PRIMARY KEY (id_grupo)
+	PRIMARY KEY (id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE produto (
-	id_produto int(11) NOT NULL AUTO_INCREMENT,
+	id int(11) NOT NULL AUTO_INCREMENT,
 	id_grupo int(11),
 	id_usuario int(11),
 	descricao varchar(255) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE produto (
 	observacao text,
 	data_criacao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	data_modificacao timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	PRIMARY KEY (id_produto),
+	PRIMARY KEY (id),
 	FOREIGN KEY (id_grupo) REFERENCES grupo (id_grupo),
 	FOREIGN KEY (id_usuario) REFERENCES usuario (id_usuario)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;

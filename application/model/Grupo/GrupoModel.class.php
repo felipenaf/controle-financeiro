@@ -2,25 +2,25 @@
 
 class GrupoModel {
 
-	private $id_grupo;
+	private $id;
 	private $nome;
 	private $slug;
 	private $tipo;
 
 	/**
-	 * Get the value of id_grupo
+	 * Get the value of id
 	 */
 	public function getIdGrupo() {
-		return $this->id_grupo;
+		return $this->id;
 	}
 
 	/**
-	 * Set the value of id_grupo
+	 * Set the value of id
 	 *
 	 * @return  self
 	 */
-	public function setIdGrupo($id_grupo) {
-		$this->id_grupo = $id_grupo;
+	public function setIdGrupo($id) {
+		$this->id = $id;
 
 		return $this;
 	}

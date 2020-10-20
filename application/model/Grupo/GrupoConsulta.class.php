@@ -17,7 +17,7 @@ class GrupoConsulta {
 				'slug' => $grupo->getSlug(),
 				'tipo' => $grupo->getTipo(),
 			);
-			$query = "INSERT INTO {$this->db['database']}.grupo
+			$query = "INSERT INTO {$this->db['database']}.grupos
 						(nome, slug, tipo)
 					VALUES
 						(:nome, :slug, :tipo);";
@@ -37,16 +37,16 @@ class GrupoConsulta {
 			$c = new Connection();
 			$con = $c->getConnection();
 			$itens = array(
-				'id_grupo' => $grupo->getIdGrupo(),
+				'id' => $grupo->getIdGrupo(),
 				'nome' => $grupo->getNome(),
 				'slug' => $grupo->getSlug(),
 				'tipo' => $grupo->getTipo(),
 			);
-			$query = "UPDATE {$this->db['database']}.grupo
+			$query = "UPDATE {$this->db['database']}.grupos
 					SET
 						nome = :nome, slug = :slug, tipo = :tipo
 					WHERE
-						id_grupo = :id_grupo;";
+						id = :id;";
 			$con = $con->prepare($query);
 			$con->execute($itens);
 			include "pages/sucesso.src.php";
@@ -62,10 +62,10 @@ class GrupoConsulta {
 		try {
 			$c = new Connection();
 			$con = $c->getConnection();
-			$id_grupo = $grupo->getIdGrupo();
-			$query = "DELETE FROM {$this->db['database']}.grupo WHERE id_grupo = :id_grupo;";
+			$id = $grupo->getIdGrupo();
+			$query = "DELETE FROM {$this->db['database']}.grupos WHERE id = :id;";
 			$stmt = $con->prepare($query);
-			$stmt->bindValue(":id_grupo", $id_grupo);
+			$stmt->bindValue(":id", $id);
 			$stmt->execute();
 			include "pages/grupo/excluir-confirmar.html.php";
 
@@ -80,7 +80,7 @@ class GrupoConsulta {
 		try {
 			$c = new Connection();
 			$con = $c->getConnection();
-			$query = "SELECT * FROM {$this->db['database']}.grupo ORDER BY nome;";
+			$query = "SELECT * FROM {$this->db['database']}.grupos ORDER BY nome;";
 			$result = $con->query($query);
 			return $result->fetchAll(PDO::FETCH_ASSOC);
 
@@ -91,13 +91,13 @@ class GrupoConsulta {
 		}
 	}
 
-	public function getGrupoById($id_grupo) {
+	public function getGrupoById($id) {
 		try {
 			$c = new Connection();
 			$con = $c->getConnection();
-			$query = "SELECT * FROM {$this->db['database']}.grupo WHERE id_grupo = :id_grupo;";
+			$query = "SELECT * FROM {$this->db['database']}.grupos WHERE id = :id;";
 			$stmt = $con->prepare($query);
-			$stmt->bindValue(":id_grupo", $id_grupo);
+			$stmt->bindValue(":id", $id);
 			$stmt->execute();
 			return $stmt->fetch(PDO::FETCH_ASSOC);
 

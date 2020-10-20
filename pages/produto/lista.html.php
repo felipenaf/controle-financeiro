@@ -36,8 +36,8 @@
 									<td><?=$produto['grupo']['nome']?></td>
 									<td><?=date('d/m/Y', strtotime($produto['data_criacao']))?></td>
 									<td><?=$produto['observacao']?></td>
-									<td><a href="cadastrar/<?=$produto['id_produto']?>">Editar</a></td>
-									<td><a href="excluir/<?=$produto['id_produto']?>">Excluir</a></td>
+									<td><a href="cadastrar/<?=$produto['id']?>">Editar</a></td>
+									<td><a href="excluir/<?=$produto['id']?>">Excluir</a></td>
 								</tr>
 						<?php endforeach;?>
 					</table>

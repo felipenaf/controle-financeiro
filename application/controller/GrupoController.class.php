@@ -16,7 +16,7 @@ class GrupoController {
 	public static function updateGrupo($grupo) {
 
 		$g = new GrupoModel();
-		$g->setIdGrupo($grupo['id_grupo']);
+		$g->setIdGrupo($grupo['id']);
 		$g->setNome($grupo['nome']);
 		$g->setSlug($grupo['slug']);
 		$g->setTipo($grupo['tipo']);
@@ -25,9 +25,9 @@ class GrupoController {
 		return $consulta->updateGrupo($g);
 	}
 
-	public static function deleteGrupo($id_grupo) {
+	public static function deleteGrupo($id) {
 		$g = new GrupoModel();
-		$g->setIdGrupo($id_grupo);
+		$g->setIdGrupo($id);
 
 		$consulta = new GrupoConsulta();
 		return $consulta->deleteGrupo($g);
@@ -38,9 +38,9 @@ class GrupoController {
 		return $consulta->getGrupos();
 	}
 
-	public static function getGrupoById($id_grupo) {
+	public static function getGrupoById($id) {
 		$consulta = new GrupoConsulta();
-		return $consulta->getGrupoById($id_grupo);
+		return $consulta->getGrupoById($id);
 	}
 
 }
